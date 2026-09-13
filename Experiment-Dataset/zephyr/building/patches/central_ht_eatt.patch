@@ -1,0 +1,18 @@
+diff --git a/samples/bluetooth/central_ht/prj.conf b/samples/bluetooth/central_ht/prj.conf
+index e937bf405d..aa92f31496 100644
+--- a/samples/bluetooth/central_ht/prj.conf
++++ b/samples/bluetooth/central_ht/prj.conf
+@@ -3,3 +3,13 @@ CONFIG_BT_DEBUG_LOG=y
+ CONFIG_BT_CENTRAL=y
+ CONFIG_BT_SMP=y
+ CONFIG_BT_GATT_CLIENT=y
++
++CONFIG_BT_L2CAP_DYNAMIC_CHANNEL=y
++
++CONFIG_BT_EATT=y
++
++CONFIG_BT_DEBUG_LOG=y
++CONFIG_BT_DEBUG_ATT=y
++CONFIG_BT_DEBUG_GATT=y
++CONFIG_BT_DEBUG_L2CAP=y
++CONFIG_BT_DEBUG_SMP=y

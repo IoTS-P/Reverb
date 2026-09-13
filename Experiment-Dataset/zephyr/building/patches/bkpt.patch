@@ -1,0 +1,21 @@
+diff --git a/drivers/serial/uart_nrfx_uart.c b/drivers/serial/uart_nrfx_uart.c
+index 514ae023c9..fd2e689b64 100644
+--- a/drivers/serial/uart_nrfx_uart.c
++++ b/drivers/serial/uart_nrfx_uart.c
+@@ -792,8 +792,14 @@ static int uart_nrfx_fifo_read(struct device *dev,
+ 		/* Clear the interrupt */
+ 		nrf_uart_event_clear(uart0_addr, NRF_UART_EVENT_RXDRDY);
+ 
+-		/* Receive a character */
+-		rx_data[num_rx++] = (u8_t)nrf_uart_rxd_get(uart0_addr);
++		// self-made bkpt for test
++		u8_t val = nrf_uart_rxd_get(uart0_addr);
++		if(val == 0xad) {
++			__asm("bkpt #0");
++		} else {
++			/* Receive a character */
++			rx_data[num_rx++] = val;
++		}
+ 	}
+ 
+ 	return num_rx;

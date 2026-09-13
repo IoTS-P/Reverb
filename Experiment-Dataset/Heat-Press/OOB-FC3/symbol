@@ -1,0 +1,498 @@
+
+Heat_Press.elf:     file format elf32-littlearm
+
+SYMBOL TABLE:
+00080000 l    d  .text	00000000 .text
+20070000 l    d  .relocate	00000000 .relocate
+200708bc l    d  .bss	00000000 .bss
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    df *ABS*	00000000 startup_sam3xa.c
+00000000 l    df *ABS*	00000000 crtstuff.c
+000800f4 l     F .text	00000000 __do_global_dtors_aux
+200708bc l       .bss	00000000 completed.7857
+000848cc l     O .text	00000000 __do_global_dtors_aux_fini_array_entry
+00080118 l     F .text	00000000 frame_dummy
+200708c0 l       .bss	00000000 object.7862
+000848ac l     O .text	00000000 __frame_dummy_init_array_entry
+00000000 l    df *ABS*	00000000 HeatPress.ino.cpp
+00080aac l     F .text	00000040 _GLOBAL__sub_I__ZN6ModbusC2Ev
+00083c60 l     O .text	00000008 _ZL12fctsupported
+00000000 l    df *ABS*	00000000 variant.cpp
+00080d10 l     F .text	000000d4 _GLOBAL__sub_I_g_APinDescription
+00000000 l    df *ABS*	00000000 pio.c
+00000000 l    df *ABS*	00000000 pmc.c
+00000000 l    df *ABS*	00000000 system_sam3xa.c
+00000000 l    df *ABS*	00000000 adc.c
+00000000 l    df *ABS*	00000000 uotghs.c
+00000000 l    df *ABS*	00000000 WInterrupts.c
+20070f9c l     O .bss	00000080 callbacksPioA
+2007101c l     O .bss	00000080 callbacksPioB
+2007109c l     O .bss	00000080 callbacksPioC
+2007111c l     O .bss	00000080 callbacksPioD
+00000000 l    df *ABS*	00000000 cortex_handlers.c
+0008129c l     F .text	00000002 __halt
+00000000 l    df *ABS*	00000000 hooks.c
+000812bc l     F .text	00000002 __empty
+000812be l     F .text	00000004 __false
+000812c2 l     F .text	00000002 __halt
+00000000 l    df *ABS*	00000000 syscalls_sam3.c
+2007119c l     O .bss	00000004 heap.6420
+00000000 l    df *ABS*	00000000 wiring.c
+00000000 l    df *ABS*	00000000 wiring_analog.c
+00000000 l    df *ABS*	00000000 wiring_digital.c
+00000000 l    df *ABS*	00000000 Print.cpp
+000814ee l     F .text	0000000c _ZN5Print5printEmi.part.3
+00000000 l    df *ABS*	00000000 Reset.cpp
+20070040 l     O .relocate	00000004 _ZL5ticks
+00000000 l    df *ABS*	00000000 RingBuffer.cpp
+00000000 l    df *ABS*	00000000 UARTClass.cpp
+00000000 l    df *ABS*	00000000 USARTClass.cpp
+00000000 l    df *ABS*	00000000 WMath.cpp
+00000000 l    df *ABS*	00000000 WString.cpp
+00000000 l    df *ABS*	00000000 main.cpp
+00000000 l    df *ABS*	00000000 watchdog.cpp
+00000000 l    df *ABS*	00000000 USBCore.cpp
+00081908 l     F .text	00000020 _ZL11USB_SendZlpv
+00081a80 l     F .text	00000064 _ZL24USB_SendStringDescriptorPKhi
+00081bc8 l     F .text	00000454 _ZL7USB_ISRv
+00081bbc l     F .text	0000000c _GLOBAL__sub_I_EndPoints
+200711a2 l     O .bss	00000001 _ZL14isEndpointHalt
+200711a8 l     O .bss	00000001 _ZL21isRemoteWakeUpEnabled
+0008478a l     O .text	00000035 _ZL18test_packet_buffer
+000847dd l     O .text	00000009 _ZL19USB_DeviceQualifier
+00000000 l    df *ABS*	00000000 CDC.cpp
+000821fc l     F .text	0000001c _GLOBAL__sub_I_cdc_rx_buffer
+00084810 l     O .text	00000042 _ZL18_cdcOtherInterface
+200713c8 l     O .bss	00000004 _ZZN7Serial_6acceptEvE5guard
+00084852 l     O .text	00000042 _ZL13_cdcInterface
+2007006c l     O .relocate	00000004 _ZL10breakValue
+20070070 l     O .relocate	00000008 _ZL12_usbLineInfo
+00000000 l    df *ABS*	00000000 PluggableUSB.cpp
+200713e0 l     O .bss	00000008 _ZZ12PluggableUSBvE3obj
+200713e8 l     O .bss	00000004 _ZGVZ12PluggableUSBvE3obj
+00000000 l    df *ABS*	00000000 timetick.c
+200713ec l     O .bss	00000004 _dwTickCount
+00000000 l    df *ABS*	00000000 wdt.c
+00000000 l    df *ABS*	00000000 uotghs_device.c
+200713f0 l     O .bss	00000028 ul_recv_fifo_ptr
+20071418 l     O .bss	00000028 ul_send_fifo_ptr
+00000000 l    df *ABS*	00000000 _arm_addsubsf3.o
+00000000 l    df *ABS*	00000000 _arm_muldivsf3.o
+00000000 l    df *ABS*	00000000 _arm_cmpsf2.o
+00000000 l    df *ABS*	00000000 _arm_fixsfsi.o
+00000000 l    df *ABS*	00000000 _arm_fixunssfsi.o
+00000000 l    df *ABS*	00000000 aeabi_atexit.c
+00000000 l    df *ABS*	00000000 cxa_atexit.c
+00000000 l    df *ABS*	00000000 init.c
+00000000 l    df *ABS*	00000000 malloc.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 memmove.c
+00000000 l    df *ABS*	00000000 memset.c
+00000000 l    df *ABS*	00000000 mlock.c
+00000000 l    df *ABS*	00000000 realloc.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 sbrkr.c
+00000000 l    df *ABS*	00000000 strcpy.c
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 syskill.c
+00000000 l    df *ABS*	00000000 __atexit.c
+00000000 l    df *ABS*	00000000 __call_atexit.c
+000839b4 l     F .text	00000014 register_fini
+00000000 l    df *ABS*	00000000 atexit.c
+00000000 l    df *ABS*	00000000 fini.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 signalr.c
+00000000 l    df *ABS*	00000000 impure.c
+20070080 l     O .relocate	00000428 impure_data
+00000000 l    df *ABS*	00000000 /home/dingisoul/.arduino15/packages/arduino/tools/arm-none-eabi-gcc/4.8.3-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/crti.o
+00000000 l    df *ABS*	00000000 /home/dingisoul/.arduino15/packages/arduino/tools/arm-none-eabi-gcc/4.8.3-2014q1/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/crtn.o
+00000000 l    df *ABS*	00000000 interrupt_sam_nvic.c
+00000000 l    df *ABS*	00000000 reent.c
+00000000 l    df *ABS*	00000000 
+00000000 l       *UND*	00000000 __bss_start__
+00000000 l       *UND*	00000000 __bss_end__
+00000000 l       *UND*	00000000 software_init_hook
+00000000 l       *UND*	00000000 hardware_init_hook
+20088000 l       *ABS*	00000000 __StackTop
+00000000 l       *UND*	00000000 __stack
+20088000 l       *ABS*	00000000 __StackLimit
+00080148 g     F .text	0000004c _ZN6Modbus5beginEl
+0008225c g     F .text	0000001c _ZN13PluggableUSB_12getShortNameEPc
+00080194 g     F .text	0000006c _ZN6Modbus11getRxBufferEv
+0008129c  w    F .text	00000002 DACC_Handler
+000837e0 g     F .text	000000ba strcpy
+200709e0 g     O .bss	00000004 kda1
+0008132c g     F .text	00000006 _getpid
+20070db0 g     O .bss	0000004f g_pinStatus
+0008129c  w    F .text	00000002 DebugMon_Handler
+000812bc  w    F .text	00000002 yield
+00081814 g     F .text	00000006 _Z8makeWordhh
+00081714 g     F .text	00000070 _ZN9UARTClass4initEmm
+20070978 g     O .bss	00000004 espera_plancha
+20070a68 g     O .bss	00000004 kpa1
+00083c38 g     F .text	00000028 _kill_r
+0008129c  w    F .text	00000002 DMAC_Handler
+200711a0 g     O .bss	00000002 _cmark
+0008129c  w    F .text	00000002 TRNG_Handler
+000804a8 g     F .text	00000018 HardFault_Handler
+0008129c  w    F .text	00000002 TC2_Handler
+00084786 g     O .text	00000004 STRING_LANGUAGE
+20070980 g     O .bss	00000004 segundosp
+20070f98 g     O .bss	00000004 gpf_isr
+000833e8 g     F .text	00000002 __malloc_unlock
+000818fc  w    F .text	0000000c _Z13watchdogSetupv
+00081194 g     F .text	0000000a adc_disable_channel
+00082a0c g     F .text	00000136 .hidden __divsf3
+00082640 g     F .text	00000028 UDD_ReleaseTX
+000812a6 g     F .text	00000016 SysTick_Handler
+00081b40 g     F .text	00000022 _Z24USBD_SendOtherInterfacesv
+00080bdc g     F .text	0000000c USART3_Handler
+20070968 g     O .bss	00000004 kia1
+0008129c  w    F .text	00000002 TWI1_Handler
+00081b00 g     F .text	0000001e _Z26USBD_ClassInterfaceRequestR8USBSetup
+20070988 g     O .bss	00000004 dutyalto1
+00080ea4 g     F .text	00000064 PIO_Configure
+00083284 g     F .text	000000ca memmove
+00080f1c g     F .text	00000014 pmc_enable_upll_clock
+000812be  w    F .text	00000004 sysTickHook
+000812a2 g     F .text	00000004 PendSV_Handler
+0008129c  w    F .text	00000002 NMI_Handler
+00082c30 g     F .text	0000004c .hidden __fixsfsi
+0008129c  w    F .text	00000002 TC7_Handler
+00082488 g     F .text	00000010 UDD_WaitOUT
+0008152a g     F .text	0000003e _ZN5Print11printNumberEmh
+00080000 g       .text	00000000 _sfixed
+000814cc g     F .text	00000022 _ZN5Print5writeEPKhj
+00081602 g     F .text	0000001c _ZN9UARTClass4peekEv
+00081b9c g     F .text	00000020 _ZN10USBDevice_6attachEv
+000817f0 g     F .text	00000024 _ZN10USARTClassC1EP5Usart4IRQnmP10RingBufferS4_
+20070d28 g     O .bss	00000088 tx_buffer4
+20070c28 g     O .bss	00000028 Serial1
+0008129c  w    F .text	00000002 ADC_Handler
+00080e32 g     F .text	00000026 PIO_SetPeripheral
+20071474 g     O .bss	00000004 errno
+000848d0 g       .relocate	00000000 _etext
+200708bc g       .bss	00000000 _sbss
+2007098c g     O .bss	00000004 duty1
+00082694 g     F .text	00000160 .hidden __aeabi_fadd
+00082690 g     F .text	00000164 .hidden __subsf3
+00082184  w    F .text	00000078 _Z9CDC_SetupR8USBSetup
+0008243c g     F .text	0000003c UDD_InitEndpoints
+000805e0 g     F .text	000004c8 loop
+000818c2  w    F .text	00000002 initVariant
+00080bbc  w    F .text	00000002 _Z12serialEvent1v
+200708bc g       .bss	00000000 _szero
+200711a4 g     O .bss	00000004 _cdcComposite
+20070ba0 g     O .bss	00000088 rx_buffer1
+000822c0 g     F .text	00000010 TimeTick_Increment
+0008129c  w    F .text	00000002 SMC_Handler
+00080bc4 g     F .text	0000000c USART0_Handler
+00080e7e g     F .text	00000024 PIO_SetOutput
+0008129c  w    F .text	00000002 RTT_Handler
+20070000 g       .relocate	00000000 _srelocate
+00082c1c g     F .text	00000012 .hidden __aeabi_fcmpgt
+0008129c  w    F .text	00000002 EFC1_Handler
+20070938 g     O .bss	00000004 estado
+20070958 g     O .bss	00000004 tempe_z1
+000848d0 g       .text	00000000 __fini_array_end
+2007003c g     O .relocate	00000004 SystemCoreClock
+00080bbe  w    F .text	00000002 _Z12serialEvent2v
+0008023c g     F .text	00000082 _ZN6Modbus12sendTxBufferEv
+00082d2c g     F .text	00000010 malloc
+200708d8 g     O .bss	00000004 sst
+000812ec g     F .text	0000000a _fstat
+00082604 g     F .text	00000014 UDD_FifoByteCount
+000827fc g     F .text	0000001c .hidden __aeabi_i2f
+000811f4 g     F .text	00000038 PIOB_Handler
+20070954 g     O .bss	00000004 in1
+0008129c  w    F .text	00000002 RTC_Handler
+0008129c  w    F .text	00000002 UsageFault_Handler
+00080422 g     F .text	00000068 _ZN6Modbus4pollEv
+00082b4c g     F .text	00000066 .hidden __lesf2
+20071448 g     O .bss	00000004 __malloc_top_pad
+00084774 g     O .text	00000012 USB_DeviceDescriptor
+00082618 g     F .text	00000028 UDD_ReleaseRX
+2007002c g     O .relocate	00000000 .hidden __dso_handle
+200711ac g     O .bss	00000004 _usbInitialized
+0008183e g     F .text	00000018 _ZN6String12changeBufferEj
+2007096c g     O .bss	0000000c RxString
+00081784 g     F .text	00000008 _ZN9UARTClass5beginEm
+00081856 g     F .text	00000022 _ZN6String7reserveEj
+000837bc g     F .text	00000024 _sbrk_r
+00080aec g     F .text	000000c0 snapshot_handler
+0008145c g     F .text	00000070 digitalWrite
+000814fa  w    F .text	0000001e _ZN5Print5writeEPKc
+000825bc g     F .text	00000034 UDD_Recv
+00081594 g     F .text	00000020 tickReset
+20071444 g     O .bss	00000004 __malloc_max_sbrked_mem
+00081354 g     F .text	00000108 pinMode
+00082034 g     F .text	00000006 _ZN7Serial_17availableForWriteEv
+00081648 g     F .text	00000018 _ZN9UARTClass5flushEv
+20070078 g     O .relocate	00000004 g_interrupt_enabled
+200711b8 g     O .bss	00000002 _cend
+000823c0 g     F .text	00000050 UDD_Attach
+0008129c  w    F .text	00000002 TC6_Handler
+00082b54 g     F .text	0000005e .hidden __nesf2
+000822e4 g     F .text	0000000c UDD_SetStack
+200708dc g     O .bss	00000004 reloj
+0008129c  w    F .text	00000002 WDT_Handler
+000812f6 g     F .text	00000004 _isatty
+0008129c  w    F .text	00000002 CAN0_Handler
+00084898 g     O .text	00000004 _global_impure_ptr
+000833fc g     F .text	000003c0 _realloc_r
+00082cdc g     F .text	00000050 __libc_init_array
+0008201c g     F .text	00000018 _ZN7Serial_9availableEv
+0008203c g     F .text	00000020 _ZN7Serial_4peekEv
+00081352 g     F .text	00000002 analogOutputInit
+000812c4 g     F .text	0000001c _sbrk
+20070964 g     O .bss	00000001 u8state
+200711bc g     O .bss	00000004 _usbConfiguration
+0008129c  w    F .text	00000002 TC4_Handler
+0008129c  w    F .text	00000002 TC1_Handler
+20070044 g     O .relocate	00000028 EndPoints
+000820b8 g     F .text	00000006 _ZN7Serial_5flushEv
+2007097c g     O .bss	00000004 minutosp
+0008116c g     F .text	0000000e adc_configure_trigger
+0008489c g     F .text	00000000 _init
+00080fb4 g     F .text	00000014 pmc_switch_udpck_to_upllck
+0008181a g     F .text	0000000e _ZN6StringD1Ev
+2007094c g     O .bss	00000004 dutybajo1
+0008129c  w    F .text	00000002 HSMCI_Handler
+00082690 g     F .text	00000164 .hidden __aeabi_fsub
+000803b8 g     F .text	0000003c _ZN6Modbus14validateAnswerEv
+000839d4 g     F .text	00000030 __libc_fini_array
+20071478 g       .bss	00000000 _ebss
+20070c78 g     O .bss	00000028 Serial3
+20070984 g     O .bss	00000004 kdp1
+0008105c g     F .text	00000078 Reset_Handler
+200708e0 g     O .bss	00000004 ep1
+00082c08 g     F .text	00000012 .hidden __aeabi_fcmpge
+20070030 g     O .relocate	00000009 snapshot_command
+00082074 g     F .text	00000044 _ZN7Serial_4readEv
+20070940 g     O .bss	00000004 segundos
+000822f0 g     F .text	000000d0 UDD_Init
+00082828 g     F .text	0000007c .hidden __floatdisf
+0008129c  w    F .text	00000002 TC3_Handler
+000816f0 g     F .text	00000024 _ZN9UARTClassC1EP4Uart4IRQnmP10RingBufferS4_
+00081878 g     F .text	00000026 _ZN6String4copyEPKcj
+00080fc8 g     F .text	0000000c pmc_enable_udpck
+00081b62 g     F .text	00000016 _Z10USBD_Flushm
+00082b44 g     F .text	0000006e .hidden __gtsf2
+0008129c  w    F .text	00000002 TWI0_Handler
+000822dc g     F .text	00000008 WDT_Disable
+000838fc g     F .text	00000010 kill
+0008117a g     F .text	0000001a adc_configure_timing
+00080de4  w    F .text	00000044 _Z14serialEventRunv
+0008205c g     F .text	00000016 _ZN7Serial_5writeEh
+00082bf4 g     F .text	00000012 .hidden __aeabi_fcmple
+0008181a g     F .text	0000000e _ZN6StringD2Ev
+0008048c g     F .text	0000001c _Z13send_snapshotPKcm
+00082594 g     F .text	00000028 UDD_Recv8
+00000000  w      *UND*	00000000 __deregister_frame_info
+20070a6c g     O .bss	00000088 tx_buffer2
+20070b7c g     O .bss	00000024 Serial
+20070960 g     O .bss	00000004 kip1
+20070ca0 g     O .bss	00000088 tx_buffer3
+00080bd0 g     F .text	0000000c USART1_Handler
+00081660 g     F .text	00000054 _ZN9UARTClass5writeEh
+00081520 g     F .text	0000000a _ZN5Print5printEc
+000847e8 g     O .text	00000028 _ZTV7Serial_
+00083aa0 g     F .text	00000198 _free_r
+000822d0 g     F .text	0000000c GetTickCount
+000811bc g     F .text	00000038 PIOA_Handler
+200708b8 g     O .relocate	00000004 __malloc_sbrk_base
+000812fa g     F .text	00000004 _lseek
+20070e00 g     O .bss	00000088 rx_buffer2
+000827fc g     F .text	0000001c .hidden __floatsisf
+200709fc g     O .bss	00000004 tiempopid1
+00080bac  w    F .text	00000002 _Z11serialEventv
+0008390c g     F .text	000000a8 __register_exitproc
+0008129c  w    F .text	00000002 SSC_Handler
+0008129c  w    F .text	00000002 EFC0_Handler
+000819d0 g     F .text	00000022 _Z9USBD_Recvm
+20070f10 g     O .bss	00000088 rx_buffer4
+000820c0 g     F .text	00000070 _ZN7Serial_6acceptEv
+00082410 g     F .text	0000002c UDD_InitEP
+00082c30 g     F .text	0000004c .hidden __aeabi_f2iz
+2007144c g     O .bss	00000028 __malloc_current_mallinfo
+000817f0 g     F .text	00000024 _ZN10USARTClassC2EP5Usart4IRQnmP10RingBufferS4_
+00082b54 g     F .text	0000005e .hidden __eqsf2
+000812c2  w    F .text	00000002 pendSVHook
+0008129c  w    F .text	00000002 PMC_Handler
+2007095c g     O .bss	00000004 tempe_z2
+200711b4 g     O .bss	00000004 _usbSetInterface
+000833ec g     F .text	00000010 realloc
+00081b78 g     F .text	00000024 _ZN10USBDevice_C2Ev
+20070998 g     O .bss	00000048 telegram
+00082cc8 g     F .text	00000014 __cxa_atexit
+000824e8 g     F .text	00000088 UDD_Send
+00081828 g     F .text	00000016 _ZN6String10invalidateEv
+00082a0c g     F .text	00000136 .hidden __aeabi_fdiv
+200711b0 g     O .bss	00000001 USBDevice
+0008189e g     F .text	00000024 _ZN6StringC1EPKc
+000815ec  w    F .text	00000004 _ZN9UARTClasscvbEv
+00080f08 g     F .text	00000014 PIO_GetOutputDataStatus
+00082818 g     F .text	0000008c .hidden __floatundisf
+00080be8 g     F .text	00000128 init
+0008129c  w    F .text	00000002 PWM_Handler
+200704ac g     O .relocate	00000408 __malloc_av_
+000827f4 g     F .text	00000024 .hidden __aeabi_ui2f
+0008129c  w    F .text	00000002 CAN1_Handler
+000833e4 g     F .text	00000002 __malloc_lock
+000848cc g       .text	00000000 __fini_array_start
+00081584 g     F .text	00000010 cancelReset
+000815f0 g     F .text	00000012 _ZN9UARTClass9availableEv
+00082b54 g     F .text	0000005e .hidden __cmpsf2
+00082668 g     F .text	00000020 UDD_SetAddress
+00083350 g     F .text	00000094 memset
+0008129c  w    F .text	00000002 MemManage_Handler
+0008119e g     F .text	00000008 adc_disable_all_channel
+000815b4 g     F .text	0000001a _ZN10RingBufferC1Ev
+00080f30 g     F .text	00000044 pmc_enable_periph_clk
+000818c4 g     F .text	00000038 main
+20071440 g     O .bss	00000004 __malloc_max_total_mem
+0008215c  w    F .text	00000014 _Z16CDC_GetInterfacePh
+00081a40 g     F .text	00000040 _Z16USBD_SendControlhPKvm
+0008129c  w    F .text	00000002 SUPC_Handler
+00082828 g     F .text	0000007c .hidden __aeabi_l2f
+000812c2  w    F .text	00000002 svcHook
+00082b4c g     F .text	00000066 .hidden __ltsf2
+00082298 g     F .text	00000028 _Z12PluggableUSBv
+0008129e g     F .text	00000004 SVC_Handler
+20070000 g     F .relocate	0000002c banzai
+000848c0 g       .text	00000000 __init_array_end
+00082d4c g     F .text	00000538 _malloc_r
+00082498 g     F .text	00000018 UDD_ClearIN
+00081574 g     F .text	00000004 _ZN5Print5printEji
+00082218 g     F .text	00000028 _ZN13PluggableUSB_12getInterfaceEPh
+20071478 g       .bss	00000000 _ezero
+0008129c  w    F .text	00000002 TC8_Handler
+00081518 g     F .text	00000008 _ZN5Print5printEPKc
+00000000  w      *UND*	00000000 __libc_fini
+00082818 g     F .text	0000008c .hidden __aeabi_ul2f
+00082170  w    F .text	00000014 _Z21CDC_GetOtherInterfacePh
+00082bbc g     F .text	00000010 .hidden __aeabi_cfcmple
+00083a04 g     F .text	0000009c _malloc_trim_r
+00081928 g     F .text	0000002c _Z14USBD_Availablem
+000828a4 g     F .text	00000168 .hidden __mulsf3
+200709e8 g     O .bss	00000014 data8024
+20070950 g     O .bss	00000004 tiempo_espera
+00081b1e g     F .text	00000022 _Z19USBD_SendInterfacesv
+00080e28 g     F .text	0000000a PIO_PullUp
+000818fc g     F .text	0000000c _watchdogDefaultSetup
+00080fd4 g     F .text	00000088 SystemInit
+20070990 g     O .bss	00000004 duty2
+000815ce g     F .text	0000001e _ZN10RingBuffer10store_charEh
+00081336 g     F .text	0000001c delay
+000848d0 g       .text	00000000 _efixed
+0008129c  w    F .text	00000002 USART2_Handler
+000848c0 g     F .text	00000000 _fini
+00080f74 g     F .text	00000040 pmc_disable_periph_clk
+00080e58 g     F .text	00000026 PIO_SetInput
+20070994 g     O .bss	00000004 mmt
+000839c8 g     F .text	0000000c atexit
+00082b44 g     F .text	0000006e .hidden __gesf2
+000824d8 g     F .text	00000010 UDD_ClearSetupInt
+00082688 g     F .text	0000016c .hidden __aeabi_frsub
+00081264 g     F .text	00000038 PIOD_Handler
+0008129c  w    F .text	00000002 EMAC_Handler
+000825f0 g     F .text	00000014 UDD_Stall
+0008189e g     F .text	00000024 _ZN6StringC2EPKc
+200704a8 g     O .relocate	00000004 _impure_ptr
+200711c0 g     O .bss	00000208 cdc_rx_buffer
+00082bcc g     F .text	00000012 .hidden __aeabi_fcmpeq
+000810d4 g     F .text	00000098 adc_init
+00080bb0 g     F .text	0000000c UART_Handler
+000828a4 g     F .text	00000168 .hidden __aeabi_fmul
+000848a8 g       .text	00000000 __preinit_array_end
+00082bb4 g     F .text	00000018 .hidden __aeabi_cfrcmple
+200709e4 g     O .bss	00000004 temperatura1
+00082478 g     F .text	00000010 UDD_WaitIN
+0008178c g     F .text	0000005a _ZN9UARTClass10IrqHandlerEv
+00080000 g     O .text	000000f4 exception_table
+00081568 g     F .text	0000000c _ZN5Print5printEmi
+00082278 g     F .text	00000020 _ZN13PluggableUSB_5setupER8USBSetup
+000804c0 g     F .text	00000120 setup
+20070af4 g     O .bss	00000088 tx_buffer1
+00082be0 g     F .text	00000012 .hidden __aeabi_fcmplt
+00084738 g     O .text	0000002c _ZTV10USARTClass
+000815b4 g     F .text	0000001a _ZN10RingBufferC2Ev
+20088000 g       *ABS*	00000000 _estack
+200708bc g       .relocate	00000000 _erelocate
+20070934 g     O .bss	00000004 YN
+00081304 g     F .text	00000024 _write
+00083c98 g     O .text	00000a2c g_APinDescription
+20071478 g       .bss	00000000 _end
+0008122c g     F .text	00000038 PIOC_Handler
+000824c8 g     F .text	00000010 UDD_ReceivedSetupInt
+200708e8 g     O .bss	00000040 au16data
+200713cc g     O .bss	00000014 SerialUSB
+20070928 g     O .bss	00000004 ssres
+00082130 g     F .text	0000002c _ZN7Serial_5writeEPKhj
+000816f0 g     F .text	00000024 _ZN9UARTClassC2EP4Uart4IRQnmP10RingBufferS4_
+2007092c g     O .bss	00000004 pid1
+00082c7c g     F .text	0000003e .hidden __aeabi_f2uiz
+200708b4 g     O .relocate	00000004 __malloc_trim_threshold
+000812e0 g     F .text	00000006 link
+20070930 g     O .bss	00000004 terminar_ciclo
+000811a6 g     F .text	00000004 adc_disable_interrupt
+000847bf g     O .text	0000000c STRING_MANUFACTURER
+00081578 g     F .text	0000000c initiateReset
+000827f4 g     F .text	00000024 .hidden __floatunsisf
+0008132a g     F .text	00000002 _kill
+000817e6 g     F .text	00000008 _ZN10USARTClass5beginEm
+00082bbc g     F .text	00000010 .hidden __aeabi_cfcmpeq
+00084768 g     O .text	0000000c STRING_PRODUCT
+000803f4 g     F .text	0000002e _ZN6Modbus7get_FC3Ev
+000812fe g     F .text	00000004 _read
+000848a8 g       .text	00000000 __init_array_start
+00082570 g     F .text	00000024 UDD_Send8
+00081b78 g     F .text	00000024 _ZN10USBDevice_C1Ev
+00082c7c g     F .text	0000003e .hidden __fixunssfsi
+00082240 g     F .text	0000001c _ZN13PluggableUSB_13getDescriptorER8USBSetup
+00081328 g     F .text	00000002 _exit
+0008129c  w    F .text	00000002 BusFault_Handler
+20070e88 g     O .bss	00000088 rx_buffer3
+0008389c g     F .text	0000005e strlen
+00084708 g     O .text	0000002c _ZTV9UARTClass
+0008129c  w    F .text	00000002 RSTC_Handler
+20070a64 g     O .bss	00000004 mmres
+0008129c  w    F .text	00000002 TC0_Handler
+00081ae4 g     F .text	0000001c _Z16USBD_RecvControlPvm
+20070944 g     O .bss	00000004 incre
+000802be g     F .text	000000f8 _ZN6Modbus5queryE8modbus_t
+00000000  w      *UND*	00000000 _Jv_RegisterClasses
+000819f4 g     F .text	0000004c _Z9USBD_SendmPKvm
+0008161e g     F .text	0000002a _ZN9UARTClass4readEv
+000848a8 g       .text	00000000 __preinit_array_start
+0008129c  w    F .text	00000002 TC5_Handler
+2007093c g     O .bss	00000004 minutos
+200708e4 g     O .bss	00000004 u32wait
+00080bc0  w    F .text	00000002 _Z12serialEvent3v
+00082cbc g     F .text	0000000a __aeabi_atexit
+00000000  w      *UND*	00000000 __register_frame_info
+000847cb g     O .text	00000012 USB_DeviceDescriptorA
+00080200 g     F .text	0000003c _ZN6Modbus7calcCRCEh
+00081332 g     F .text	00000004 millis
+000816b4 g     F .text	0000003c _ZN9UARTClass3endEv
+00082694 g     F .text	00000160 .hidden __addsf3
+00081954 g     F .text	0000007c _Z9USBD_RecvmPvm
+000811ac g     F .text	00000010 UOTGHS_Handler
+0008129c  w    F .text	00000002 SPI0_Handler
+000824b0 g     F .text	00000018 UDD_ClearOUT
+20070a00 g     O .bss	00000064 master
+000812e6 g     F .text	00000006 _close
+00082d3c g     F .text	00000010 free
+20070c50 g     O .bss	00000028 Serial2
+20070948 g     O .bss	00000004 e1
+
+

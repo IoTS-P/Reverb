@@ -1,0 +1,30 @@
+diff --git a/samples/net/sockets/echo_server/src/echo-server.c b/samples/net/sockets/echo_server/src/echo-server.c
+index 82cdf2a0d4..f022253b6a 100644
+--- a/samples/net/sockets/echo_server/src/echo-server.c
++++ b/samples/net/sockets/echo_server/src/echo-server.c
+@@ -6,7 +6,8 @@
+  *
+  * SPDX-License-Identifier: Apache-2.0
+  */
+-
++#include <arch/cpu.h>
++#include <arch/arm/aarch32/cortex_m/mpu/arm_mpu.h>
+ #include <logging/log.h>
+ LOG_MODULE_REGISTER(net_echo_server_sample, LOG_LEVEL_DBG);
+ 
+@@ -220,6 +221,15 @@ void main(void)
+ {
+ 	init_app();
+ 
++	// configure region for null ptr
++	static struct z_arm_mpu_partition dynamic_regions[1];
++	dynamic_regions[0].start = 0x0;
++	dynamic_regions[0].size = 0x20;
++	dynamic_regions[0].attr = K_MEM_PARTITION_P_RO_U_RO;
++
++	arm_core_mpu_configure_dynamic_mpu_regions(dynamic_regions, 1);
++	printk("Successfully configure null mpu regions\n");
++
+ 	if (!IS_ENABLED(CONFIG_NET_CONNECTION_MANAGER)) {
+ 		/* If the config library has not been configured to start the
+ 		 * app only after we have a connection, then we can start

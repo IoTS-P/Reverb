@@ -1,0 +1,56 @@
+From f944b4b133649f4637f76fc5e58a3f3bc554bb36 Mon Sep 17 00:00:00 2001
+From: Ruibo Lu <reaperlu@hust.edu.cn>
+Date: Tue, 2 Apr 2024 16:21:23 +0800
+Subject: [PATCH] [coap]: add 802154 configurations for COAP
+
+Signed-off-by: Ruibo Lu <reaperlu@hust.edu.cn>
+---
+ .../net/sockets/coap_client/overlay-802154.conf    | 14 ++++++++++++++
+ .../net/sockets/coap_server/overlay-802154.conf    |  5 +++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 samples/net/sockets/coap_client/overlay-802154.conf
+ create mode 100644 samples/net/sockets/coap_server/overlay-802154.conf
+
+diff --git a/samples/net/sockets/coap_client/overlay-802154.conf b/samples/net/sockets/coap_client/overlay-802154.conf
+new file mode 100644
+index 00000000000..a0a4b98fbb3
+--- /dev/null
++++ b/samples/net/sockets/coap_client/overlay-802154.conf
+@@ -0,0 +1,14 @@
++# 802154 network
++CONFIG_NET_L2_IEEE802154=y
++CONFIG_NET_L2_IEEE802154_SHELL=y
++# CONFIG_NET_L2_IEEE802154_LOG_LEVEL_DBG=y
++CONFIG_NET_CONFIG_IEEE802154_CHANNEL=23
++
++# For IPv6
++#CONFIG_NET_BUF_DATA_SIZE=256
++
++#CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE=2048
++
++# for stack overflow
++CONFIG_MAIN_STACK_SIZE=2048
++#CONFIG_COAP_CLIENT_STACK_SIZE=2048
+diff --git a/samples/net/sockets/coap_server/overlay-802154.conf b/samples/net/sockets/coap_server/overlay-802154.conf
+new file mode 100644
+index 00000000000..8277a6ab8c4
+--- /dev/null
++++ b/samples/net/sockets/coap_server/overlay-802154.conf
+@@ -0,0 +1,14 @@
++# 802154 network
++CONFIG_NET_TCP=n
++CONFIG_NET_IPV4=n
++
++CONFIG_NET_CONFIG_NEED_IPV6=y
++CONFIG_NET_CONFIG_NEED_IPV4=n
++CONFIG_NET_CONFIG_MY_IPV4_ADDR=""
++CONFIG_NET_CONFIG_PEER_IPV4_ADDR=""
++
++CONFIG_NET_L2_IEEE802154=y
++CONFIG_NET_L2_IEEE802154_SHELL=y
++#CONFIG_NET_L2_IEEE802154_LOG_LEVEL_INF=y
++
++CONFIG_NET_CONFIG_IEEE802154_CHANNEL=26
+-- 
+2.44.0
+

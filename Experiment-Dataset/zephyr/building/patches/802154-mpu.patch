@@ -1,0 +1,24 @@
+diff --git a/arch/arm/core/aarch32/cortex_m/mpu/arm_core_mpu.c b/arch/arm/core/aarch32/cortex_m/mpu/arm_core_mpu.c
+index 5a7e04ecae..39fdce7096 100644
+--- a/arch/arm/core/aarch32/cortex_m/mpu/arm_core_mpu.c
++++ b/arch/arm/core/aarch32/cortex_m/mpu/arm_core_mpu.c
+@@ -97,6 +97,19 @@ static const struct z_arm_mpu_partition static_regions[] = {
+ 			.attr = K_MEM_PARTITION_P_RO_U_NA,
+ 		},
+ #endif /* !CONFIG_MULTITHREADING && CONFIG_MPU_STACK_GUARD */
++		{
++			/* GCOV code coverage accounting area. Needs User permissions
++			* to function
++			*/
++			.start = 0x0,
++			.size = 0x20,
++			.attr = K_MEM_PARTITION_P_NA_U_NA,
++		},
++               {
++			.start = 0x20010000,
++			.size = 0x1000,
++			.attr = K_MEM_PARTITION_P_NA_U_NA,
++		},
+ };
+ 
+ /**

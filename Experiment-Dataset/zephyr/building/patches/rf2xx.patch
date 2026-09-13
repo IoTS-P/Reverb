@@ -1,0 +1,1206 @@
+From c76307799455655d40205b73b140d29d221b1ffb Mon Sep 17 00:00:00 2001
+From: Ruibo Lu <reaperlu@hust.edu.cn>
+Date: Sat, 14 Oct 2023 02:53:26 +0800
+Subject: [PATCH] Revert "net/ieee802154: Validate length on received frames"
+
+This reverts commit 38970c07abfcddcfc6a5958189f096a55c49594a.
+---
+ boards/shields/atmel_rf2xx/Kconfig.defconfig  |  22 ++
+ boards/shields/atmel_rf2xx/Kconfig.shield     |  20 +
+ .../shields/atmel_rf2xx/atmel_rf2xx.overlay   |  10 +
+ .../atmel_rf2xx/atmel_rf2xx_arduino.overlay   |  33 ++
+ .../atmel_rf2xx/atmel_rf2xx_legacy.overlay    |  26 ++
+ .../atmel_rf2xx/atmel_rf2xx_mikrobus.overlay  |  32 ++
+ .../atmel_rf2xx/atmel_rf2xx_xplained.overlay  |  26 ++
+ .../atmel_rf2xx/atmel_rf2xx_xpro.overlay      |  26 ++
+ boards/shields/atmel_rf2xx/doc/ATAVRRZ600.jpg | Bin 0 -> 29028 bytes
+ .../atmel_rf2xx/doc/atreb233-xpro-top.jpg     | Bin 0 -> 12517 bytes
+ boards/shields/atmel_rf2xx/doc/index.rst      | 360 ++++++++++++++++++
+ 11 files changed, 555 insertions(+)
+ create mode 100644 boards/shields/atmel_rf2xx/Kconfig.defconfig
+ create mode 100644 boards/shields/atmel_rf2xx/Kconfig.shield
+ create mode 100644 boards/shields/atmel_rf2xx/atmel_rf2xx.overlay
+ create mode 100644 boards/shields/atmel_rf2xx/atmel_rf2xx_arduino.overlay
+ create mode 100644 boards/shields/atmel_rf2xx/atmel_rf2xx_legacy.overlay
+ create mode 100644 boards/shields/atmel_rf2xx/atmel_rf2xx_mikrobus.overlay
+ create mode 100644 boards/shields/atmel_rf2xx/atmel_rf2xx_xplained.overlay
+ create mode 100644 boards/shields/atmel_rf2xx/atmel_rf2xx_xpro.overlay
+ create mode 100644 boards/shields/atmel_rf2xx/doc/ATAVRRZ600.jpg
+ create mode 100644 boards/shields/atmel_rf2xx/doc/atreb233-xpro-top.jpg
+ create mode 100644 boards/shields/atmel_rf2xx/doc/index.rst
+
+diff --git a/boards/shields/atmel_rf2xx/Kconfig.defconfig b/boards/shields/atmel_rf2xx/Kconfig.defconfig
+new file mode 100644
+index 0000000000..7c31ebf775
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/Kconfig.defconfig
+@@ -0,0 +1,22 @@
++# Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++# SPDX-License-Identifier: Apache-2.0
++
++if SHIELD_ATMEL_RF2XX || \
++	SHIELD_ATMEL_RF2XX_ARDUINO || \
++	SHIELD_ATMEL_RF2XX_MIKROBUS || \
++	SHIELD_ATMEL_RF2XX_XPRO || \
++	SHIELD_ATMEL_RF2XX_LEGACY || \
++	SHIELD_ATMEL_RF2XX_XPLAINED
++
++if NETWORKING
++
++orsource "boards/*.defconfig"
++
++endif	# NETWORKING
++
++endif	# SHIELD_ATMEL_RF2XX || \
++	# SHIELD_ATMEL_RF2XX_ARDUINO || \
++	# SHIELD_ATMEL_RF2XX_MIKROBUS || \
++	# SHIELD_ATMEL_RF2XX_XPRO || \
++	# SHIELD_ATMEL_RF2XX_LEGACY || \
++	# SHIELD_ATMEL_RF2XX_XPLAINED
+diff --git a/boards/shields/atmel_rf2xx/Kconfig.shield b/boards/shields/atmel_rf2xx/Kconfig.shield
+new file mode 100644
+index 0000000000..6a4967ef8f
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/Kconfig.shield
+@@ -0,0 +1,20 @@
++# Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++# SPDX-License-Identifier: Apache-2.0
++
++config SHIELD_ATMEL_RF2XX
++	def_bool $(shields_list_contains,atmel_rf2xx)
++
++config SHIELD_ATMEL_RF2XX_ARDUINO
++	def_bool $(shields_list_contains,atmel_rf2xx_arduino)
++
++config SHIELD_ATMEL_RF2XX_MIKROBUS
++	def_bool $(shields_list_contains,atmel_rf2xx_mikrobus)
++
++config SHIELD_ATMEL_RF2XX_XPRO
++	def_bool $(shields_list_contains,atmel_rf2xx_xpro)
++
++config SHIELD_ATMEL_RF2XX_LEGACY
++	def_bool $(shields_list_contains,atmel_rf2xx_legacy)
++
++config SHIELD_ATMEL_RF2XX_XPLAINED
++	def_bool $(shields_list_contains,atmel_rf2xx_xplained)
+diff --git a/boards/shields/atmel_rf2xx/atmel_rf2xx.overlay b/boards/shields/atmel_rf2xx/atmel_rf2xx.overlay
+new file mode 100644
+index 0000000000..e88e21eb1b
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/atmel_rf2xx.overlay
+@@ -0,0 +1,10 @@
++/*
++ * Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++/*
++ * This file is intentionally empty. Please confer with shield documentation
++ * for instructions to use this shield.
++ */
+diff --git a/boards/shields/atmel_rf2xx/atmel_rf2xx_arduino.overlay b/boards/shields/atmel_rf2xx/atmel_rf2xx_arduino.overlay
+new file mode 100644
+index 0000000000..bdd82491c1
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/atmel_rf2xx_arduino.overlay
+@@ -0,0 +1,33 @@
++/*
++ * Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++/ {
++	chosen {
++		zephyr,ieee802154 = &ieee802154_atmel_rf2xx_arduino;
++	};
++};
++
++&arduino_spi {
++	status = "okay";
++
++	/* D10 */
++	cs-gpios = <&arduino_header 16
++		    (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
++
++	ieee802154_atmel_rf2xx_arduino: rf2xx@0 {
++		compatible = "atmel,rf2xx";
++		reg = <0x0>;
++		spi-max-frequency = <6000000>;
++		/*  D2 */
++		irq-gpios = <&arduino_header 8
++			     (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
++		/*  D8 */
++		reset-gpios = <&arduino_header 14 GPIO_ACTIVE_LOW>;
++		/*  D9 */
++		slptr-gpios = <&arduino_header 15 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++};
+diff --git a/boards/shields/atmel_rf2xx/atmel_rf2xx_legacy.overlay b/boards/shields/atmel_rf2xx/atmel_rf2xx_legacy.overlay
+new file mode 100644
+index 0000000000..b4221c1032
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/atmel_rf2xx_legacy.overlay
+@@ -0,0 +1,26 @@
++/*
++ * Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++/ {
++	chosen {
++		zephyr,ieee802154 = &ieee802154_atmel_rf2xx_legacy;
++	};
++};
++
++&ext1_spi {
++	status = "okay";
++
++	ieee802154_atmel_rf2xx_legacy: rf2xx@0 {
++		compatible = "atmel,rf2xx";
++		reg = <0x0>;
++		spi-max-frequency = <6000000>;
++		irq-gpios = <&ext1_header 10
++			     (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
++		reset-gpios = <&ext1_header 8 GPIO_ACTIVE_LOW>;
++		slptr-gpios = <&ext1_header 11 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++};
+diff --git a/boards/shields/atmel_rf2xx/atmel_rf2xx_mikrobus.overlay b/boards/shields/atmel_rf2xx/atmel_rf2xx_mikrobus.overlay
+new file mode 100644
+index 0000000000..918b5025fb
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/atmel_rf2xx_mikrobus.overlay
+@@ -0,0 +1,32 @@
++/*
++ * Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++/ {
++	chosen {
++		zephyr,ieee802154 = &ieee802154_atmel_rf2xx_mikrobus;
++	};
++};
++
++&mikrobus_spi {
++	status = "okay";
++
++	/* CS */
++	cs-gpios = <&mikrobus_header 2 GPIO_ACTIVE_LOW>;
++
++	ieee802154_atmel_rf2xx_mikrobus: rf2xx@0 {
++		compatible = "atmel,rf2xx";
++		reg = <0x0>;
++		spi-max-frequency = <6000000>;
++		/* INT */
++		irq-gpios = <&mikrobus_header 7
++			     (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
++		/*  AN */
++		reset-gpios = <&mikrobus_header 0 GPIO_ACTIVE_LOW>;
++		/* PWM */
++		slptr-gpios = <&mikrobus_header 6 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++};
+diff --git a/boards/shields/atmel_rf2xx/atmel_rf2xx_xplained.overlay b/boards/shields/atmel_rf2xx/atmel_rf2xx_xplained.overlay
+new file mode 100644
+index 0000000000..45ea2c7c84
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/atmel_rf2xx_xplained.overlay
+@@ -0,0 +1,26 @@
++/*
++ * Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++/ {
++	chosen {
++		zephyr,ieee802154 = &ieee802154_atmel_rf2xx_xplained;
++	};
++};
++
++&xplained1_spi {
++	status = "okay";
++
++	ieee802154_atmel_rf2xx_xplained: rf2xx@0 {
++		compatible = "atmel,rf2xx";
++		reg = <0x0>;
++		spi-max-frequency = <6000000>;
++		irq-gpios = <&xplained1_header 2
++			     (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
++		reset-gpios = <&xplained1_header 0 GPIO_ACTIVE_LOW>;
++		slptr-gpios = <&xplained1_header 3 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++};
+diff --git a/boards/shields/atmel_rf2xx/atmel_rf2xx_xpro.overlay b/boards/shields/atmel_rf2xx/atmel_rf2xx_xpro.overlay
+new file mode 100644
+index 0000000000..bcda18a87a
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/atmel_rf2xx_xpro.overlay
+@@ -0,0 +1,26 @@
++/*
++ * Copyright (c) 2020 Gerson Fernando Budke <nandojve@gmail.com>
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ */
++
++/ {
++	chosen {
++		zephyr,ieee802154 = &ieee802154_atmel_rf2xx_xpro;
++	};
++};
++
++&ext1_spi {
++	status = "okay";
++
++	ieee802154_atmel_rf2xx_xpro: rf2xx@0 {
++		compatible = "atmel,rf2xx";
++		reg = <0x0>;
++		spi-max-frequency = <6000000>;
++		irq-gpios = <&ext1_header 6
++			     (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
++		reset-gpios = <&ext1_header 4 GPIO_ACTIVE_LOW>;
++		slptr-gpios = <&ext1_header 7 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++};
+diff --git a/boards/shields/atmel_rf2xx/doc/ATAVRRZ600.jpg b/boards/shields/atmel_rf2xx/doc/ATAVRRZ600.jpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..c598c35ec8390caa86137f17a35dfa94cd379ea0
+GIT binary patch
+literal 29028
+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%0D<7J@Smhuq
+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
+O{by10_lnr(UjHBan<e`I
+
+literal 0
+HcmV?d00001
+
+diff --git a/boards/shields/atmel_rf2xx/doc/atreb233-xpro-top.jpg b/boards/shields/atmel_rf2xx/doc/atreb233-xpro-top.jpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..8769fb8d168134e1532d6744dd2478f42c782424
+GIT binary patch
+literal 12517
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/boards/shields/atmel_rf2xx/doc/index.rst b/boards/shields/atmel_rf2xx/doc/index.rst
+new file mode 100644
+index 0000000000..dbcdccbd3e
+--- /dev/null
++++ b/boards/shields/atmel_rf2xx/doc/index.rst
+@@ -0,0 +1,360 @@
++.. _atmel_at86rf2xx_transceivers:
++
++Atmel AT86RF2XX Transceivers
++############################
++
++Overview
++********
++
++The Atmel AT86RF2xx is a high performance radio transceiver targeted for IEEE
++802.15.4, ZigBee, RF4CE, 6LoWPAN, and ISM applications.  The AT86RF2xx is a
++true SPI-to-antenna solution and can be operated by any external
++microcontroller.
++
++The current IEEE 802.15.4 AT86RF2xx Zephyr driver currently works with any
++2.4 Ghz transceiver, except AT86RF230. The RF2xx driver allows use of
++:ref:`ieee802154_interface` and :ref:`thread_protocol_interface` network
++stacks.
++
++This is a generic shield focused not only on Atmel Development Boards Kits.
++There are compatible designations for `AT AVR-RZ600`_ and `AT REB233-XPRO`_.
++This means, any Atmel board with 10-pin Xplained or 20-pin Xplained Pro
++extension headers can be used. You can check
++`Atmel Xplained Pro Hardware Development Kit User Guide`_ for more information.
++Besides that, Arduino and MikroBus standard headers are available to complement
++the shield module configurations.  For any other project that doesn't fit on
++the current available variations an overlay can be created.  However, the
++overlay is the last resource and is recommended use standard header always
++possible.
++
++RZ600 Module
++============
++
++The RZ600 Development Kit needs Atmel Xplained or Xplained-Pro header
++connector.  The modules from this kit are available without any transceiver
++advanced features.  For Xplained headers the `atmel_rf2xx_xplained`_ must be
++selected.  For Xplained-Pro header the `atmel_rf2xx_legacy`_ must be enabled.
++
++.. image:: ATAVRRZ600.jpg
++   :align: center
++   :alt: AVR-RZ600
++
++Pins Assignment of the RZ600 Module
++===================================
++
+++---------+--------+-------------------------------------+
++|   Pin   |  Name  |           Function                  |
+++=========+========+=====================================+
++|    1    |  RST   | GPIO - Reset                        |
+++---------+--------+-------------------------------------+
++|    2    |  MISC  | DNU - Do Not Use                    |
+++---------+--------+-------------------------------------+
++|    3    |  IRQ   | GPIO - Interrupt                    |
+++---------+--------+-------------------------------------+
++|    4    | SLP_TR | GPIO - Multi purpose control signal |
+++---------+--------+-------------------------------------+
++|    5    |   CS   | SPI Chip Select                     |
+++---------+--------+-------------------------------------+
++|    6    |  MOSI  | SPI Master Out / Slave In           |
+++---------+--------+-------------------------------------+
++|    7    |  MISO  | SPI Master In / Slave Out           |
+++---------+--------+-------------------------------------+
++|    8    |  SCLK  | SPI Clock                           |
+++---------+--------+-------------------------------------+
++|    9    |  GND   |                                     |
+++---------+--------+-------------------------------------+
++|   10    |  VDD   |  POWER +3.3V                        |
+++---------+--------+-------------------------------------+
++
++REB233-XPRO Module
++==================
++
++The REB233-XPRO development kit uses Atmel Xplained Pro header.  It is enabled
++selecting `atmel_rf2xx_xpro`_ option.
++
++.. image:: atreb233-xpro-top.jpg
++   :align: center
++   :alt: REB233-XPRO Top
++
++Pins Assignment of the REB233-XPRO Module
++=========================================
++
+++---------+--------+-------------------------------------+
++|   Pin   |  Name  |           Function                  |
+++=========+========+=====================================+
++|    1    |   ID   | DNU - Do Not Use                    |
+++---------+--------+-------------------------------------+
++|    2    |  GND   |                                     |
+++---------+--------+-------------------------------------+
++|    3    |  DIG1  | DNU - Do Not Use                    |
+++---------+--------+-------------------------------------+
++|    4    |  DIG3  | DNU - Do Not Use                    |
+++---------+--------+-------------------------------------+
++|    5    |  DIG2  | GPIO - RX Frame Time Stamping       |
+++---------+--------+-------------------------------------+
++|    6    |  CLKM  | DNU - Do Not Use                    |
+++---------+--------+-------------------------------------+
++|    7    |  RST   | GPIO - Reset                        |
+++---------+--------+-------------------------------------+
++|    8    |        |                                     |
+++---------+--------+-------------------------------------+
++|    9    |  IRQ   | GPIO - Interrupt                    |
+++---------+--------+-------------------------------------+
++|   10    | SLP_TR | GPIO - Multi purpose control signal |
+++---------+--------+-------------------------------------+
++|   11    |  SDA   | EEPROM - AT24MAC602                 |
+++---------+--------+-------------------------------------+
++|   12    |  SCL   | EEPROM - AT24MAC602                 |
+++---------+--------+-------------------------------------+
++|   13    |        |                                     |
+++---------+--------+-------------------------------------+
++|   14    |        |                                     |
+++---------+--------+-------------------------------------+
++|   15    |   CS   | SPI Chip Select                     |
+++---------+--------+-------------------------------------+
++|   16    |  MOSI  | SPI Master Out / Slave In           |
+++---------+--------+-------------------------------------+
++|   17    |  MISO  | SPI Master In / Slave Out           |
+++---------+--------+-------------------------------------+
++|   18    |  SCLK  | SPI Clock                           |
+++---------+--------+-------------------------------------+
++|   19    |  GND   |                                     |
+++---------+--------+-------------------------------------+
++|   20    |  VDD   |  POWER +3.3V                        |
+++---------+--------+-------------------------------------+
++
++.. note:: DIG2 is not current implemented on RF2xx driver.
++
++Arduino Shields
++===============
++
++Arduino Uno R3 header is available without advanced features.  It is enabled
++selecting `atmel_rf2xx_arduino`_ variant option.
++
++Pins Assignment of the Arduino Shield Modules
++=============================================
++
+++---------+--------+-------------------------------------+
++|   Pin   |  Name  |           Function                  |
+++=========+========+=====================================+
++|   D0    |        |                                     |
+++---------+--------+-------------------------------------+
++|   D1    |        |                                     |
+++---------+--------+-------------------------------------+
++|   D2    |  IRQ   | GPIO - Interrupt                    |
+++---------+--------+-------------------------------------+
++|   D3    |        |                                     |
+++---------+--------+-------------------------------------+
++|   D4    |        |                                     |
+++---------+--------+-------------------------------------+
++|   D5    |        |                                     |
+++---------+--------+-------------------------------------+
++|   D6    |        |                                     |
+++---------+--------+-------------------------------------+
++|   D7    |        |                                     |
+++---------+--------+-------------------------------------+
++|   D8    |  RST   | GPIO - Reset                        |
+++---------+--------+-------------------------------------+
++|   D9    | SLP_TR | GPIO - Multi purpose control signal |
+++---------+--------+-------------------------------------+
++|   D10   |   CS   | SPI Chip Select                     |
+++---------+--------+-------------------------------------+
++|   D11   |  MOSI  | SPI Master Out / Slave In           |
+++---------+--------+-------------------------------------+
++|   D12   |  MISO  | SPI Master In / Slave Out           |
+++---------+--------+-------------------------------------+
++|   D13   |  SCLK  | SPI Clock                           |
+++---------+--------+-------------------------------------+
++|   D14   |        |                                     |
+++---------+--------+-------------------------------------+
++|   D15   |        |                                     |
+++---------+--------+-------------------------------------+
++|         |  GND   |                                     |
+++---------+--------+-------------------------------------+
++|         |  VDD   |  POWER +3.3V                        |
+++---------+--------+-------------------------------------+
++|         |  VCC   |  POWER +5.0V                        |
+++---------+--------+-------------------------------------+
++
++MikroBus Shields
++================
++
++MikroBus header is available available without advanced features.  It is
++enabled selecting `atmel_rf2xx_mikrobus`_ variant option.
++
++Pins Assignment of the MikroBus Shield Modules
++==============================================
++
+++---------+--------+-------------------------------------+
++|   Pin   |  Name  |           Function                  |
+++=========+========+=====================================+
++|   AN    |  RST   | GPIO - Reset                        |
+++---------+--------+-------------------------------------+
++|   RST   |        |                                     |
+++---------+--------+-------------------------------------+
++|   CS    |   CS   | SPI Chip Select                     |
+++---------+--------+-------------------------------------+
++|   SCK   |  SCLK  | SPI Clock                           |
+++---------+--------+-------------------------------------+
++|  MISO   |  MISO  | SPI Master In / Slave Out           |
+++---------+--------+-------------------------------------+
++|  MOSI   |  MOSI  | SPI Master Out / Slave In           |
+++---------+--------+-------------------------------------+
++| VCC-3.3 |  VDD   |  POWER +3.3V                        |
+++---------+--------+-------------------------------------+
++|   GND   |  GND   |                                     |
+++---------+--------+-------------------------------------+
++|   GND   |  GND   |                                     |
+++---------+--------+-------------------------------------+
++| VCC-5.0 |  VCC   |  POWER +5.0V                        |
+++---------+--------+-------------------------------------+
++|   SDA   |        |                                     |
+++---------+--------+-------------------------------------+
++|   SCL   |        |                                     |
+++---------+--------+-------------------------------------+
++|   TX    |        |                                     |
+++---------+--------+-------------------------------------+
++|   RX    |        |                                     |
+++---------+--------+-------------------------------------+
++|   INT   |  IRQ   | GPIO - Interrupt                    |
+++---------+--------+-------------------------------------+
++|   PWM   | SLP_TR | GPIO - Multi purpose control signal |
+++---------+--------+-------------------------------------+
++
++Supported variations
++====================
++
++The below table suggests shield variation accordingly with end user
++application.  When a standard connector (arduino, mikrobus, xplained,
++xplained-pro) is available on board, user should select the matching shield
++configuration. When atmel_rf2xx shield is used with a board that doesn't
++feature a standard connector, a dedicated <board>.overlay file should be
++provided.  The remaining configurations should be used based on the board
++standard headers available.
++
+++-----------------------------+------------------------------+-----------+
++| Connector Standard          | Shield Designation           | Variation |
+++=============================+==============================+===========+
++| Without standard (overlay)  | `atmel_rf2xx`_               |     1     |
+++-----------------------------+------------------------------+-----------+
++| Atmel Xplained header       | `atmel_rf2xx_xplained`_      |     2     |
+++-----------------------------+------------------------------+-----------+
++| Atmel Xplained Pro header   | `atmel_rf2xx_xpro`_          |     3     |
+++-----------------------------+------------------------------+-----------+
++| Atmel Xplained Pro header   | `atmel_rf2xx_legacy`_        |     4     |
+++-----------------------------+------------------------------+-----------+
++| Arduino                     | `atmel_rf2xx_arduino`_       |     5     |
+++-----------------------------+------------------------------+-----------+
++| MikroBus                    | `atmel_rf2xx_mikrobus`_      |     6     |
+++-----------------------------+------------------------------+-----------+
++
++Requirements
++************
++
++This shield requires a board which provides a configuration that allows an
++SPI interface, an interrupt signal and two GPIO. (see :ref:`shields` for more
++details).
++
++.. note::
++	Boards that already have a network interface:  Check network
++	documentation to understand how properly configure both interfaces.
++	To keep simple, make sure IEEE 802.15.4 is the only interface enabled
++	at Networking -> Link Layer Options.  This will avoid problems running
++	Zephyr samples.
++
++Tested Boards
++=============
++
+++-----------------------------+------------------------------+-----------+
++| Board                       | Disabled Interface           | Variation |
+++=============================+==============================+===========+
++| ATMEL sam4s_xplained        |                              |     2     |
+++-----------------------------+------------------------------+-----------+
++| ATMEL sam4e_xpro            | Ethernet                     |   3 , 4   |
+++-----------------------------+------------------------------+-----------+
++| ATMEL sam_v71_xult          | Ethernet                     | 3 , 4 , 5 |
+++-----------------------------+------------------------------+-----------+
++
++Sample usage
++************
++
++You can try use IEEE 802.15.4 and/or OpenThread with the Zephyr Echo server
++and Echo client samples, which provide out-of-the-box configuration for
++both IEEE 802.15.4 and OpenThread.  To enable IEEE 802.15.4 support in the
++samples, build them with ``overlay-802154.conf`` overlay config file.  Same
++way, to enable OpenThread support, build them with ``overlay-ot.conf`` overlay
++config file. See :zephyr:code-sample:`sockets-echo-server` and
++:zephyr:code-sample:`sockets-echo-client` samples for details.
++
++Build and Programming
++*********************
++
++Set ``-DSHIELD=<shield designator>`` when you invoke ``west build``.
++
++.. zephyr-app-commands::
++   :zephyr-app: samples/net/sockets/echo_server
++   :host-os: unix
++   :board: sam4s_xplained
++   :gen-args: -DOVERLAY_CONFIG=overlay-802154.conf
++   :shield: atmel_rf2xx_xplained
++   :goals: build flash
++   :compact:
++
++.. zephyr-app-commands::
++   :zephyr-app: samples/net/sockets/echo_server
++   :host-os: unix
++   :board: [sam4e_xpro | sam_v71_xult]
++   :gen-args: -DOVERLAY_CONFIG=overlay-802154.conf
++   :shield: [atmel_rf2xx_xpro | atmel_rf2xx_legacy]
++   :goals: build flash
++   :compact:
++
++.. zephyr-app-commands::
++   :zephyr-app: samples/net/sockets/echo_server
++   :host-os: unix
++   :board: [sam_v71_xult | frdm_k64f | nucleo_f767zi]
++   :gen-args: -DOVERLAY_CONFIG=overlay-802154.conf
++   :shield: atmel_rf2xx_arduino
++   :goals: build flash
++   :compact:
++
++.. zephyr-app-commands::
++   :zephyr-app: samples/net/sockets/echo_server
++   :host-os: unix
++   :board: lpcxpresso55s69_ns
++   :gen-args: -DOVERLAY_CONFIG=overlay-802154.conf
++   :shield: atmel_rf2xx_microbus
++   :goals: build flash
++   :compact:
++
++References
++**********
++
++.. target-notes::
++
++.. _AT AVR-RZ600:
++   https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATAVRRZ600
++
++.. _AT REB233-XPRO:
++   https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATREB233-XPRO
++
++.. _Atmel Xplained Pro Hardware Development Kit User Guide:
++   http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42091-Atmel-Xplained-Pro-Hardware-Development-Kit_User%20Guide.pdf
++
++.. _atmel_rf2xx:
++   https://github.com/zephyrproject-rtos/zephyr/blob/master/boards/shields/atmel_rf2xx/atmel_rf2xx.overlay
++
++.. _atmel_rf2xx_xplained:
++   https://github.com/zephyrproject-rtos/zephyr/blob/master/boards/shields/atmel_rf2xx/atmel_rf2xx_xplained.overlay
++
++.. _atmel_rf2xx_xpro:
++   https://github.com/zephyrproject-rtos/zephyr/blob/master/boards/shields/atmel_rf2xx/atmel_rf2xx_xpro.overlay
++
++.. _atmel_rf2xx_legacy:
++   https://github.com/zephyrproject-rtos/zephyr/blob/master/boards/shields/atmel_rf2xx/atmel_rf2xx_legacy.overlay
++
++.. _atmel_rf2xx_arduino:
++   https://github.com/zephyrproject-rtos/zephyr/blob/master/boards/shields/atmel_rf2xx/atmel_rf2xx_arduino.overlay
++
++.. _atmel_rf2xx_mikrobus:
++   https://github.com/zephyrproject-rtos/zephyr/blob/master/boards/shields/atmel_rf2xx/atmel_rf2xx_mikrobus.overlay
+-- 
+2.42.0
+

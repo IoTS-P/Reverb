@@ -1,0 +1,24 @@
+From 801582201cc1501efaeabe457cac9c54378d5b18 Mon Sep 17 00:00:00 2001
+From: Ruibo Lu <reaperlu@hust.edu.cn>
+Date: Fri, 14 Jun 2024 11:42:35 +0800
+Subject: [PATCH] disable bluetooth assert
+
+Signed-off-by: Ruibo Lu <reaperlu@hust.edu.cn>
+---
+ samples/bluetooth/peripheral_dis/prj.conf | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/samples/bluetooth/peripheral_dis/prj.conf b/samples/bluetooth/peripheral_dis/prj.conf
+index 3b88987ce0..2700c34504 100644
+--- a/samples/bluetooth/peripheral_dis/prj.conf
++++ b/samples/bluetooth/peripheral_dis/prj.conf
+@@ -1,5 +1,6 @@
+ CONFIG_BT=y
+ CONFIG_BT_PERIPHERAL=y
++CONFIG_BT_ASSERT=n
+
+ CONFIG_BT_GATT_DIS=y
+ CONFIG_BT_GATT_DIS_PNP=n
+--
+2.45.2
+

@@ -1,0 +1,491 @@
+0x800013c __do_global_dtors_aux
+0x8000160 frame_dummy
+0x80001a8 strlen
+0x80001b8 setPinValueCallback(unsigned char, int)
+0x8000224 analogWriteCallback(unsigned char, int)
+0x80002fc digitalWriteCallback(unsigned char, int)
+0x8000498 reportAnalogCallback(unsigned char, int)
+0x80004e4 __static_initialization_and_destruction_0(int, int)
+0x8000510 send_snapshot(char const*, unsigned long)
+0x8000530 HardFault_Handler
+0x8000548 attachServo(unsigned char, int, int)
+0x80005d0 detachServo(unsigned char)
+0x8000628 disableI2CPins()
+0x8000640 setPinModeCallback(unsigned char, int)
+0x8000aac enableI2CPins()
+0x8000b34 systemResetCallback()
+0x8000bac outputPort(unsigned char, unsigned char, unsigned char)
+0x8000bdc reportDigitalCallback(unsigned char, int)
+0x8000ebc checkDigitalInputs()
+0x8002224 setup
+0x80022bc _GLOBAL__sub_I_snapshot_command
+0x80022cc snapshot_handler
+0x800239c wireWrite(unsigned char)
+0x80023ac wireRead()
+0x80023bc readAndReportData(unsigned char, int, unsigned char, unsigned char)
+0x8002474 sysexCallback(unsigned char, unsigned char, unsigned char*)
+0x8002a9c loop
+0x8002bd8 isTimerActive(timer16_Sequence_t)
+0x8002c04 initISR(timer_s*)
+0x8002c1c ServoIrqHandle(timer_s*, unsigned long)
+0x8002d50 finISR(timer_s*)
+0x8002d58 Servo::Servo()
+0x8002d58 Servo::Servo()
+0x8002d84 Servo::attach(int, int, int)
+0x8002e0c Servo::attach(int)
+0x8002e1c Servo::detach()
+0x8002e54 Servo::writeMicroseconds(int)
+0x8002e88 Servo::write(int)
+0x8002ed0 Servo::attached()
+0x8002ee4 TwoWire::available()
+0x8002ef8 TwoWire::read()
+0x8002f24 TwoWire::peek()
+0x8002f4c TwoWire::onRequestService()
+0x8002f70 TwoWire::flush()
+0x8002fc8 TwoWire::write(unsigned char const*, unsigned int)
+0x8003064 TwoWire::write(unsigned char)
+0x80030f4 TwoWire::TwoWire()
+0x80030f4 TwoWire::TwoWire()
+0x8003120 __static_initialization_and_destruction_0(int, int)
+0x8003140 TwoWire::begin(unsigned char)
+0x80031f4 TwoWire::begin(int)
+0x80031fe TwoWire::begin()
+0x8003208 TwoWire::beginTransmission(unsigned char)
+0x8003230 TwoWire::endTransmission(unsigned char)
+0x8003298 TwoWire::endTransmission()
+0x80032a4 TwoWire::allocateRxBuffer(unsigned int)
+0x80032d8 TwoWire::onReceiveService(unsigned char*, int)
+0x8003340 TwoWire::requestFrom(unsigned char, unsigned char, unsigned long, unsigned char, unsigned char)
+0x80033d8 TwoWire::requestFrom(unsigned char, unsigned char, unsigned char)
+0x80033ec TwoWire::requestFrom(unsigned char, unsigned char)
+0x80033f6 _GLOBAL__sub_I__ZN7TwoWire8rxBufferE
+0x8003404 firmata::FirmataClass::staticAnalogCallback(void*, unsigned char, unsigned short)
+0x8003418 firmata::FirmataClass::staticDigitalCallback(void*, unsigned char, unsigned short)
+0x800342c firmata::FirmataClass::staticPinModeCallback(void*, unsigned char, unsigned short)
+0x8003440 firmata::FirmataClass::staticPinValueCallback(void*, unsigned char, unsigned short)
+0x8003454 firmata::FirmataClass::staticReportAnalogCallback(void*, unsigned char, unsigned short)
+0x8003468 firmata::FirmataClass::staticReportDigitalCallback(void*, unsigned char, unsigned short)
+0x800347c firmata::FirmataClass::staticStringCallback(void*, char const*)
+0x8003490 firmata::FirmataClass::staticSysexCallback(void*, unsigned char, unsigned int, unsigned char*)
+0x80034a8 firmata::FirmataClass::staticSystemResetCallback(void*)
+0x80034b8 firmata::FirmataClass::FirmataClass()
+0x80034b8 firmata::FirmataClass::FirmataClass()
+0x8003594 __static_initialization_and_destruction_0(int, int)
+0x80035b4 firmata::FirmataClass::printVersion()
+0x80035c2 firmata::FirmataClass::staticReportVersionCallback(void*)
+0x80035ce firmata::FirmataClass::printFirmwareVersion()
+0x80035f2 firmata::FirmataClass::staticReportFirmwareCallback(void*, unsigned int, unsigned int, char const*)
+0x80035fe firmata::FirmataClass::begin(Stream&)
+0x800361c firmata::FirmataClass::setFirmwareNameAndVersion(char const*, unsigned char, unsigned char)
+0x800369c firmata::FirmataClass::available()
+0x80036aa firmata::FirmataClass::processInput()
+0x80036ca firmata::FirmataClass::sendAnalog(unsigned char, int)
+0x80036d6 firmata::FirmataClass::sendDigitalPort(unsigned char, int)
+0x80036e2 firmata::FirmataClass::sendSysex(unsigned char, unsigned char, unsigned char*)
+0x80036ec firmata::FirmataClass::sendString(char const*)
+0x80036f6 firmata::FirmataClass::write(unsigned char)
+0x8003704 firmata::FirmataClass::attach(unsigned char, void (*)(unsigned char, int))
+0x800375c firmata::FirmataClass::attach(unsigned char, void (*)())
+0x800376c firmata::FirmataClass::attach(unsigned char, void (*)(unsigned char, unsigned char, unsigned char*))
+0x8003778 firmata::FirmataClass::getPinMode(unsigned char)
+0x8003780 firmata::FirmataClass::setPinMode(unsigned char, unsigned char)
+0x8003792 firmata::FirmataClass::getPinState(unsigned char)
+0x800379c firmata::FirmataClass::setPinState(unsigned char, int)
+0x80037a6 firmata::FirmataClass::strobeBlinkPin(unsigned char, int, int, int)
+0x80037de firmata::FirmataClass::blinkVersion()
+0x8003824 firmata::FirmataClass::begin(long)
+0x8003848 _GLOBAL__sub_I_Firmata
+0x8003856 firmata::FirmataMarshaller::encodeByteStream(unsigned int, unsigned char*, unsigned int) const
+0x80038e2 firmata::FirmataMarshaller::sendExtendedAnalog(unsigned char, unsigned int, unsigned char*) const
+0x800392a firmata::FirmataMarshaller::FirmataMarshaller()
+0x800392a firmata::FirmataMarshaller::FirmataMarshaller()
+0x8003930 firmata::FirmataMarshaller::begin(Stream&)
+0x8003934 firmata::FirmataMarshaller::sendAnalog(unsigned char, unsigned short) const
+0x800397a firmata::FirmataMarshaller::sendDigitalPort(unsigned char, unsigned short) const
+0x80039aa firmata::FirmataMarshaller::sendFirmwareVersion(unsigned char, unsigned char, unsigned int, unsigned char*) const
+0x8003a08 firmata::FirmataMarshaller::sendVersion(unsigned char, unsigned char) const
+0x8003a36 firmata::FirmataMarshaller::sendSysex(unsigned char, unsigned int, unsigned char*) const
+0x8003a7e firmata::FirmataMarshaller::sendString(char const*) const
+0x8003a98 firmata::FirmataParser::FirmataParser(unsigned char*, unsigned int)
+0x8003a98 firmata::FirmataParser::FirmataParser(unsigned char*, unsigned int)
+0x8003ae2 firmata::FirmataParser::attach(unsigned char, void (*)(void*, unsigned char, unsigned short), void*)
+0x8003b22 firmata::FirmataParser::attach(unsigned char, void (*)(void*, unsigned int, unsigned int, char const*), void*)
+0x8003b2c firmata::FirmataParser::attach(unsigned char, void (*)(void*), void*)
+0x8003b42 firmata::FirmataParser::attach(unsigned char, void (*)(void*, char const*), void*)
+0x8003b4c firmata::FirmataParser::attach(unsigned char, void (*)(void*, unsigned char, unsigned int, unsigned char*), void*)
+0x8003b52 firmata::FirmataParser::bufferDataAtPosition(unsigned char, unsigned int)
+0x8003b84 firmata::FirmataParser::decodeByteStream(unsigned int, unsigned char*)
+0x8003ba8 firmata::FirmataParser::processSysexMessage()
+0x8003c26 firmata::FirmataParser::systemReset()
+0x8003c50 firmata::FirmataParser::parse(unsigned char)
+0x8003d94 SystemClock_Config
+0x8003e1c Reset_Handler
+0x8003e64 DMA1_Channel4_IRQHandler
+0x8003e64 TAMPER_STAMP_IRQHandler
+0x8003e64 ADC1_IRQHandler
+0x8003e64 USB_LP_IRQHandler
+0x8003e64 SPI2_IRQHandler
+0x8003e64 DAC_IRQHandler
+0x8003e64 SPI1_IRQHandler
+0x8003e64 PVD_IRQHandler
+0x8003e64 USB_FS_WKUP_IRQHandler
+0x8003e64 WWDG_IRQHandler
+0x8003e64 DMA1_Channel5_IRQHandler
+0x8003e64 DMA2_Channel5_IRQHandler
+0x8003e64 RCC_IRQHandler
+0x8003e64 DMA1_Channel6_IRQHandler
+0x8003e64 COMP_ACQ_IRQHandler
+0x8003e64 DMA1_Channel2_IRQHandler
+0x8003e64 DMA1_Channel7_IRQHandler
+0x8003e64 FLASH_IRQHandler
+0x8003e64 LCD_IRQHandler
+0x8003e64 USB_HP_IRQHandler
+0x8003e64 RTC_WKUP_IRQHandler
+0x8003e64 BusFault_Handler
+0x8003e64 DebugMon_Handler
+0x8003e64 DMA2_Channel3_IRQHandler
+0x8003e64 DMA1_Channel3_IRQHandler
+0x8003e64 NMI_Handler
+0x8003e64 PendSV_Handler
+0x8003e64 SVC_Handler
+0x8003e64 SPI3_IRQHandler
+0x8003e64 DMA1_Channel1_IRQHandler
+0x8003e64 UsageFault_Handler
+0x8003e64 DMA2_Channel4_IRQHandler
+0x8003e64 MemManage_Handler
+0x8003e64 DMA2_Channel2_IRQHandler
+0x8003e64 DMA2_Channel1_IRQHandler
+0x8003e64 COMP_IRQHandler
+0x8003e66 init
+0x8003e70 pinNametoDigitalPin
+0x8003e98 HAL_MspInit
+0x8003e9c HAL_InitTick
+0x8003ec8 HAL_Init
+0x8003ef4 HAL_IncTick
+0x8003f04 HAL_GetTick
+0x8003f10 HAL_ADC_Init
+0x80040a8 HAL_ADC_PollForConversion
+0x8004162 HAL_ADC_GetValue
+0x8004168 HAL_ADC_ConfigChannel
+0x8004314 HAL_ADC_GetState
+0x8004318 ADC_Enable
+0x800439c HAL_ADC_Start
+0x800441a ADC_ConversionStop_Disable
+0x8004468 HAL_ADC_DeInit
+0x8004588 HAL_ADC_Stop
+0x80045c4 HAL_NVIC_SetPriorityGrouping
+0x80045e8 HAL_NVIC_SetPriority
+0x800464c HAL_NVIC_EnableIRQ
+0x8004668 HAL_NVIC_DisableIRQ
+0x8004690 HAL_SYSTICK_Config
+0x80046bc HAL_NVIC_ClearPendingIRQ
+0x80046dc HAL_SYSTICK_CLKSourceConfig
+0x80046fc HAL_SYSTICK_Callback
+0x80046fe HAL_SYSTICK_IRQHandler
+0x8004706 HAL_DAC_Init
+0x800472a HAL_DAC_DeInit
+0x8004746 HAL_DAC_Start
+0x80047a2 HAL_DAC_Stop
+0x80047bc HAL_DAC_ConfigChannel
+0x8004806 HAL_DAC_SetValue
+0x8004832 HAL_DMA_Abort_IT
+0x8004880 HAL_GPIO_Init
+0x8004a40 HAL_GPIO_ReadPin
+0x8004a4e HAL_GPIO_WritePin
+0x8004a5c HAL_GPIO_EXTI_IRQHandler
+0x8004a78 I2C_Master_SB
+0x8004b02 I2C_Master_ADD10
+0x8004b0e I2C_Master_ADDR
+0x8004cda I2C_SlaveTransmit_BTF
+0x8004cfa I2C_SlaveReceive_BTF
+0x8004d1a HAL_I2C_MspInit
+0x8004d1c HAL_I2C_Init
+0x8004e80 HAL_I2C_Master_Transmit_IT
+0x8004f4c HAL_I2C_Master_Receive_IT
+0x8005020 HAL_I2C_Slave_Sequential_Transmit_IT
+0x80050ac HAL_I2C_Slave_Sequential_Receive_IT
+0x8005138 HAL_I2C_EnableListen_IT
+0x8005176 HAL_I2C_MasterTxCpltCallback
+0x8005178 HAL_I2C_MasterRxCpltCallback
+0x800517a HAL_I2C_SlaveTxCpltCallback
+0x800517c I2C_SlaveTransmit_TXE
+0x80051c8 HAL_I2C_SlaveRxCpltCallback
+0x80051ca I2C_SlaveReceive_RXNE
+0x8005216 I2C_Slave_ADDR
+0x8005240 I2C_Slave_AF
+0x80052dc HAL_I2C_MemTxCpltCallback
+0x80052de I2C_MasterTransmit_TXE
+0x80053ae I2C_MasterTransmit_BTF
+0x8005450 HAL_I2C_MemRxCpltCallback
+0x8005452 I2C_MasterReceive_RXNE
+0x800552e I2C_MasterReceive_BTF
+0x8005630 HAL_I2C_AbortCpltCallback
+0x8005634 I2C_ITError
+0x8005780 I2C_Slave_STOPF
+0x8005898 HAL_I2C_EV_IRQHandler
+0x8005a08 HAL_I2C_ER_IRQHandler
+0x8005ae8 I2C_DMAAbort
+0x8005b46 HAL_I2C_GetState
+0x8005b4c HAL_I2C_GetError
+0x8005b50 RCC_SetFlashLatencyFromMSIRange
+0x8005be8 HAL_RCC_OscConfig
+0x8006374 HAL_RCC_GetSysClockFreq
+0x8006410 HAL_RCC_ClockConfig
+0x8006658 HAL_RCC_GetHCLKFreq
+0x8006664 HAL_RCC_GetPCLK1Freq
+0x8006690 HAL_RCC_GetPCLK2Freq
+0x80066bc HAL_RCC_GetClockConfig
+0x80066f8 HAL_RTC_AlarmIRQHandler
+0x8006758 HAL_RTCEx_AlarmBEventCallback
+0x800675c TIM_Base_SetConfig
+0x80067dc TIM_OC1_SetConfig
+0x800680a TIM_OC2_SetConfig
+0x800683c TIM_OC3_SetConfig
+0x800686c TIM_OC4_SetConfig
+0x800689e TIM_CCxChannelCmd
+0x80068ba HAL_TIM_OC_Init
+0x80068ec HAL_TIM_OC_DeInit
+0x800691c HAL_TIM_OC_Start_IT
+0x800697a HAL_TIM_OC_Stop_IT
+0x80069e2 HAL_TIM_PWM_Init
+0x8006a14 HAL_TIM_PWM_DeInit
+0x8006a44 HAL_TIM_PWM_Start
+0x8006a5e HAL_TIM_PWM_Stop
+0x8006a88 HAL_TIM_OC_ConfigChannel
+0x8006ae6 HAL_TIM_PWM_ConfigChannel
+0x8006bc2 HAL_TIM_IC_CaptureCallback
+0x8006bc4 HAL_TIM_PWM_PulseFinishedCallback
+0x8006bc6 HAL_TIM_TriggerCallback
+0x8006bc8 HAL_TIM_IRQHandler
+0x8006d02 UART_Transmit_IT
+0x8006d70 UART_SetConfig
+0x8007098 UART_WaitOnFlagUntilTimeout
+0x8007168 HAL_UART_MspInit
+0x800716a HAL_UART_Init
+0x80071c4 HAL_UART_Transmit
+0x80072ac HAL_UART_Transmit_IT
+0x8007312 HAL_UART_Receive_IT
+0x800738c UART_EndTransmit_IT
+0x80073b8 UART_Receive_IT
+0x800746e HAL_UART_IRQHandler
+0x8007538 HAL_UART_GetState
+0x800753e is_pin_configured
+0x8007554 set_pin_configured
+0x8007572 reset_pin_configured
+0x8007594 get_GPIO_Port
+0x80075e8 set_GPIO_Port_Clock
+0x80076e4 get_dac_channel
+0x8007700 get_adc_channel
+0x800771c get_pwm_channel
+0x8007748 HAL_DAC_MspInit
+0x8007798 dac_write_value
+0x8007820 HAL_DAC_MspDeInit
+0x8007830 dac_stop
+0x8007864 HAL_ADC_MspInit
+0x80078c0 HAL_ADC_MspDeInit
+0x80078ec adc_read_value
+0x80079d4 HAL_TIM_PWM_MspInit
+0x8007a2c HAL_TIM_PWM_MspDeInit
+0x8007a34 pwm_start
+0x8007adc pwm_stop
+0x8007b1c GetCurrentMilli
+0x8007b24 osSystickHandler
+0x8007b24 noOsSystickHandler
+0x8007b26 SysTick_Handler
+0x8007b36 digital_io_init
+0x8007b66 digital_io_write
+0x8007b7e digital_io_read
+0x8007b88 hw_config_init
+0x8007b94 pinmap_find_peripheral
+0x8007bae pinmap_peripheral
+0x8007bc0 pinmap_find_pin
+0x8007bd8 pinmap_pin
+0x8007be8 pinmap_find_function
+0x8007c04 pinmap_function
+0x8007c18 pin_in_pinmap
+0x8007c3c pinmap_merge_peripheral
+0x8007c50 HAL_RTC_AlarmAEventCallback
+0x8007c68 RTC_Alarm_IRQHandler
+0x8007c78 _Error_Handler
+0x8007c7c SystemInit
+0x8007cc4 timer_enable_clock
+0x8007e34 timer_disable_clock
+0x8007f10 getTimerIrq
+0x8007fa4 getTimerClkSrc
+0x800801c getTimerClkFreq
+0x8008088 TimerPulseInit
+0x8008114 TimerPulseDeinit
+0x800813c HAL_TIM_OC_MspInit
+0x8008144 HAL_TIM_OC_MspDeInit
+0x800814c get_timer_obj
+0x8008150 HAL_TIM_OC_DelayElapsedCallback
+0x800816a HAL_TIM_PeriodElapsedCallback
+0x8008178 getTimerCounter
+0x800817e setTimerCounter
+0x8008184 setCCRRegister
+0x8008194 TIM2_IRQHandler
+0x80081a8 TIM3_IRQHandler
+0x80081bc TIM4_IRQHandler
+0x80081d0 TIM5_IRQHandler
+0x80081e4 TIM6_IRQHandler
+0x80081f8 TIM7_IRQHandler
+0x800820c TIM9_IRQHandler
+0x8008220 TIM10_IRQHandler
+0x8008234 TIM11_IRQHandler
+0x8008248 i2c_custom_init
+0x8008488 i2c_master_write
+0x80084f2 i2c_slave_write_IT
+0x8008522 i2c_master_read
+0x800858c get_i2c_obj
+0x8008590 i2c_attachSlaveRxEvent
+0x80085a2 i2c_attachSlaveTxEvent
+0x80085b4 HAL_I2C_AddrCallback
+0x8008604 HAL_I2C_ListenCpltCallback
+0x8008634 HAL_I2C_ErrorCallback
+0x800864c I2C1_EV_IRQHandler
+0x800865c I2C1_ER_IRQHandler
+0x800866c I2C2_EV_IRQHandler
+0x800867c I2C2_ER_IRQHandler
+0x800868c uart_init
+0x80088f4 uart_debug_init
+0x8008944 uart_debug_write
+0x80089fc serial_rx_active
+0x8008a20 serial_tx_active
+0x8008a44 uart_getc
+0x8008a80 uart_attach_rx_callback
+0x8008ad8 uart_attach_tx_callback
+0x8008b2c uart_index
+0x8008b50 HAL_UART_RxCpltCallback
+0x8008b74 HAL_UART_TxCpltCallback
+0x8008bc0 HAL_UART_ErrorCallback
+0x8008c00 USART1_IRQHandler
+0x8008c18 USART2_IRQHandler
+0x8008c30 USART3_IRQHandler
+0x8008c48 UART4_IRQHandler
+0x8008c60 UART5_IRQHandler
+0x8008c78 _sbrk
+0x8008cb4 _close
+0x8008cba _fstat
+0x8008cc4 _isatty
+0x8008cc8 _lseek
+0x8008ccc _read
+0x8008cd0 _write
+0x8008cdc _exit
+0x8008ce0 _kill
+0x8008cf0 _getpid
+0x8008cf4 analogRead
+0x8008d54 analogWrite
+0x8008e4c pinMode
+0x8008ef4 digitalWrite
+0x8008f3c digitalRead
+0x8008f8c millis
+0x8008f94 delay
+0x8008f96 HardwareSerial::_tx_complete_irq(serial_s*)
+0x8008fca HardwareSerial::available()
+0x8008fde HardwareSerial::peek()
+0x8008ffa HardwareSerial::read()
+0x8009022 HardwareSerial::flush()
+0x8009036 HardwareSerial::_rx_complete_irq(serial_s*)
+0x8009074 HardwareSerial::write(unsigned char)
+0x80090c4 serialEventRun()
+0x80090f0 HardwareSerial::init()
+0x8009114 HardwareSerial::begin(unsigned long, unsigned char)
+0x80091d0 HardwareSerial::setRx(unsigned long)
+0x80091e8 HardwareSerial::setTx(unsigned long)
+0x8009200 HardwareSerial::HardwareSerial(void*)
+0x8009200 HardwareSerial::HardwareSerial(void*)
+0x800925c __static_initialization_and_destruction_0(int, int)
+0x8009280 _GLOBAL__sub_I_Serial2
+0x800928e IPAddress::printTo(Print&) const
+0x80092c8 IPAddress::IPAddress(unsigned char, unsigned char, unsigned char, unsigned char)
+0x80092c8 IPAddress::IPAddress(unsigned char, unsigned char, unsigned char, unsigned char)
+0x80092e4 __static_initialization_and_destruction_0(int, int)
+0x8009310 _GLOBAL__sub_I__ZN9IPAddressC2Ev
+0x800931e Print::write(unsigned char const*, unsigned int)
+0x8009342 Print::print(char const*)
+0x8009362 Print::print(char)
+0x800936c Print::printNumber(unsigned long, unsigned char)
+0x80093c6 Print::print(unsigned long, int)
+0x80093dc Print::print(unsigned char, int)
+0x80093e4 map(long, long, long, long, long)
+0x80093fc initVariant()
+0x80093fe premain()
+0x800940c main
+0x800942c get_pin_id(unsigned short)
+0x8009440 __tcf_0
+0x8009468 __static_initialization_and_destruction_0(int, int)
+0x8009514 EXTI0_IRQHandler
+0x800951e EXTI1_IRQHandler
+0x8009528 EXTI2_IRQHandler
+0x8009532 EXTI3_IRQHandler
+0x800953c EXTI4_IRQHandler
+0x8009546 EXTI9_5_IRQHandler
+0x800955c EXTI15_10_IRQHandler
+0x8009574 std::function<void ()>::operator()() const
+0x8009584 HAL_GPIO_EXTI_Callback
+0x80095a4 _GLOBAL__sub_I__Z22stm32_interrupt_enableP12GPIO_TypeDeftSt8functionIFvvEEm
+0x80095b2 __aeabi_atexit
+0x80095bc __assert_func
+0x80095f8 __cxa_atexit
+0x8009614 fprintf
+0x8009614 fiprintf
+0x8009638 __libc_init_array
+0x8009680 malloc
+0x8009690 free
+0x80096a0 memcpy
+0x80096b6 memset
+0x80096c8 _free_r
+0x8009760 _malloc_r
+0x800981c __sfputc_r
+0x8009848 __sfputs_r
+0x800986c _vfprintf_r
+0x800986c _vfiprintf_r
+0x8009a98 _printf_common
+0x8009b88 _printf_i
+0x8009dc8 printf
+0x8009dc8 iprintf
+0x8009df8 realloc
+0x8009e08 _sbrk_r
+0x8009e28 strchr
+0x8009e44 strncpy
+0x8009e6e strrchr
+0x8009e94 strstr
+0x8009ecc __swbuf_r
+0x8009f70 __swsetup_r
+0x800a04c abort
+0x800a05c __sflush_r
+0x800a16c _fflush_r
+0x800a1c0 _cleanup_r
+0x800a1cc std.isra.0
+0x800a214 __sfmoreglue
+0x800a240 __sinit
+0x800a2a0 __sfp
+0x800a318 _fwalk_reent
+0x800a354 __swhatbuf_r
+0x800a39c __smakebuf_r
+0x800a41c memchr
+0x800a438 __malloc_lock
+0x800a43a __malloc_unlock
+0x800a43c _realloc_r
+0x800a488 _raise_r
+0x800a4d8 raise
+0x800a4e8 _kill_r
+0x800a50c _getpid_r
+0x800a510 __sread
+0x800a532 __swrite
+0x800a56a __sseek
+0x800a58e __sclose
+0x800a598 _write_r
+0x800a5bc _close_r
+0x800a5dc _fstat_r
+0x800a600 _isatty_r
+0x800a620 _lseek_r
+0x800a644 _malloc_usable_size_r
+0x800a658 _read_r
+0x800a67c std::__throw_bad_function_call()
+0x800a684 _GLOBAL__sub_I__ZNSt12ctype_bynameIcEC2ERKSsj
+0x800a748 _GLOBAL__sub_I__ZNSt12ctype_bynameIwEC2ERKSsj
+0x800a80c _GLOBAL__sub_I__ZNSt12ctype_bynameIwEC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEj
+0x800a890 _GLOBAL__sub_I__ZNSt12ctype_bynameIcEC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEj
+0x800a914 _init
+0x800a920 _fini

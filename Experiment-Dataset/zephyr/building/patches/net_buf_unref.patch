@@ -1,0 +1,21 @@
+diff --git a/subsys/net/buf.c b/subsys/net/buf.c
+index 09add84f7e..242bbb6968 100644
+--- a/subsys/net/buf.c
++++ b/subsys/net/buf.c
+@@ -520,13 +520,12 @@ void net_buf_unref(struct net_buf *buf)
+ 		struct net_buf *frags = buf->frags;
+ 		struct net_buf_pool *pool;
+ 
+-#if defined(CONFIG_NET_BUF_LOG)
+ 		if (!buf->ref) {
+-			NET_BUF_ERR("%s():%d: buf %p double free", func, line,
+-				    buf);
++			// double free
++			void (*bad_func)(void) = (void*)0xDEADBEEF;
++			bad_func();
+ 			return;
+ 		}
+-#endif
+ 		NET_BUF_DBG("buf %p ref %u pool_id %u frags %p", buf, buf->ref,
+ 			    buf->pool_id, buf->frags);
+ 

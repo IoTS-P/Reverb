@@ -1,0 +1,18 @@
+diff --git a/samples/bluetooth/peripheral_ht/prj.conf b/samples/bluetooth/peripheral_ht/prj.conf
+index 48b21d9f87..b59f89650f 100644
+--- a/samples/bluetooth/peripheral_ht/prj.conf
++++ b/samples/bluetooth/peripheral_ht/prj.conf
+@@ -8,3 +8,13 @@ CONFIG_BT_BAS=y
+ CONFIG_BT_DEVICE_NAME="Zephyr Health Thermometer"
+ CONFIG_BT_DEVICE_APPEARANCE=768
+ CONFIG_BT_ATT_ENFORCE_FLOW=n
++
++CONFIG_BT_L2CAP_DYNAMIC_CHANNEL=y
++
++CONFIG_BT_EATT=y
++
++CONFIG_BT_DEBUG_LOG=y
++CONFIG_BT_DEBUG_ATT=y
++CONFIG_BT_DEBUG_GATT=y
++CONFIG_BT_DEBUG_L2CAP=y
++CONFIG_BT_DEBUG_SMP=y

@@ -1,0 +1,17 @@
+diff --git a/subsys/bluetooth/host/hci_core.c b/subsys/bluetooth/host/hci_core.c
+index b173de8e5b..397e4dce9d 100644
+--- a/subsys/bluetooth/host/hci_core.c
++++ b/subsys/bluetooth/host/hci_core.c
+@@ -6216,6 +6216,12 @@ static int hci_init(void)
+ 		BT_ERR("Non-BR/EDR controller detected");
+ 		return -EIO;
+ 	}
++
++	else if (!bt_dev.le.mtu) {
++		BT_ERR("ACL BR/EDR buffers not initialized");
++		return -EIO;
++	}
++
+
+ 	err = set_event_mask();
+ 	if (err) {
