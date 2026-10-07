@@ -4,9 +4,9 @@ This directory holds the experiment data for the Reverb study.
 
 ## Layout
 
-- `zephyr/` — **source directory**: Zephyr source code used to build the
-  firmware, plus the build scripts (`building/*.sh`), the applied patches
-  (`building/*.patch`) and the prebuilt images (`prebuilt/`).
+- `Firmware-Rebuild-Dataset/` — firmware rebuild materials preserved from the
+  original artifact, including RIOT and Zephyr build scripts, patches, sample
+  sources/references, and prebuilt reference images.
 
 - All other directories are individual experiment cases, one per firmware /
   device:
@@ -40,4 +40,4 @@ setup, real-device path and simulation path.
 
 - Comparison scripts (`compare.py`, `all_compare.py`, `*_compare.py`) diff the
   real-device and simulation paths to measure fidelity.
-- `zephyr/rebuild_targets.sh` rebuilds all firmware targets from `zephyr/`.
+- `Firmware-Rebuild-Dataset/zephyr/rebuild_targets.sh` rebuilds the Zephyr firmware targets.
