@@ -84,21 +84,28 @@ The supplied broker configuration supports protocol traces. Individual experimen
 
 ### B. Rewinding
 
-The rewinding component is provided in [`Reverb-Rewind-Component/`](./Reverb-Rewind-Component/).
+After recording at the edge, Reverb uses the recorded inputs and device snapshots to guide firmware execution in the cloud (or on a local server). It automatically infers the missing nondeterministic inputs to reconstruct the complete faulty execution trace.
 
 #### B.1 Environment Setup
 
-The rewinding component includes the S2E library sources required to build `libs2e.so`. This shared library is preloaded in QEMU to enable symbolic execution.
-
-For S2E build and usage instructions, consult [the bundled S2E documentation](./Reverb-Rewind-Component/docs/) or the [official S2E documentation](https://s2e.systems/docs).
+1. **Install Base Emulator (uEmu)**: Follow the instructions in the official [MCUSec/uEmu repository](https://github.com/MCUSec/uEmu) to complete the basic installation and dependency configuration of the uEmu framework.
+2. **Replace Core Component (Reverb-Rewind)**: Replace the default S2E engine component in uEmu with the `Reverb-Rewind-Component` module provided in this repository.
+3. **Recompile the Environment**: After replacing the components, recompile the entire project in your uEmu directory to apply the Reverb analysis engine and plugins.
+4. **Install Ghidra (Version 10.3)**: Download and install Ghidra 10.3. Reverb utilizes Ghidra's headless mode for auxiliary static firmware analysis.
 
 #### B.2 Rewinding with Recorded Inputs
 
-The original component README does not specify a Reverb-specific invocation command. Rewinding scripts and experiment-specific inputs remain under [`Reverb-Rewind-Component/scripts/`](./Reverb-Rewind-Component/scripts/) and [`Experiment-Dataset/`](./Experiment-Dataset/), respectively.
+Before starting the rewinding process, you need to prepare the configuration files and the corresponding input files, placing them in the appropriate directories within your workspace.
+
+1. **Generate Firmware Configuration File**: Create the corresponding S2E/uEmu configuration file for the target firmware. 
+   *💡 Reference: You can look at `Experiment-Dataset/Motion-Sensor/motion_sensor-config.lua` to understand how to configure parameters such as memory mapping, interrupts, and symbolic input points.*
+2. **Prepare Input Files**: Ensure you have the recorded input files required for firmware execution (i.e., the `.in` file and the device snapshot file).
+3. **Launch Ghidra for Static Analysis**: Use the provided `scripts/launch-ghidra.sh` script to launch Ghidra. This script uses `scripts/ControlFlowGraph.java` to extract the Control Flow Graph (CFG) information of the firmware, which provides essential support for the execution reconstruction.
+4. **Start S2E for Rewinding**: Use the `scripts/launch-motion_sensor.sh` script (or adapt it for your specific firmware) to load the firmware and configuration, and start dynamic rewinding.
 
 #### B.3 Reconstructed Execution Trace
 
-Real-device and simulated execution paths are provided with the corresponding experiment cases for comparison and diagnosis (see below).
+The S2E engine combines the recorded external inputs with symbolic execution to faithfully follow the real execution path. Once it reaches the point of failure, the crash is successfully reproduced. This provides a detailed execution context and a fully reconstructed execution trace for downstream tasks such as postmortem analysis and root-cause diagnosis.
 
 ## Experiment Dataset
 
